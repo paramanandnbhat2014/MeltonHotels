@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MeltionHotel.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="App_Themes/skin/css/siteMap.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/masterPage.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/aboutUs.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/registration.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/faq.css" rel="stylesheet" />
+    <link href="App_Themes/skin/css/homePage.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                        <img src="~/img/logo.png" alt="logo" runat="server"/>
+                </div>
+                <div class="login">
+                    <!-- Login and join from here -->
+                    <div class="form-horizontal">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Panel ID="Panel1" runat="server" Height="41px">
+                                    <asp:Button ID="LoginButton" runat="server" Text="Login" SkinID="Button-blue" />
+                                    <asp:Button ID="JoinButton" runat="server" Text="Join" SkinID="Button-green" OnClick="JoinButton_Click" />
+                                </asp:Panel>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+            </div>
+            <div id="content" class="div-body">
+                <div class="div-row">
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                    <div class="navs">
+                        <!--
+                           DataSourceID="SiteMapDataSource1"
+                       -->
+                        <asp:Menu ID="menu1" SkinID="Menu1" runat="server">
+                        </asp:Menu>
+                    </div>
+                </div>
+
+                <div class="div-body">
+                    <div class="sidebar">
+                        <div class="welcome">
+                            <blockquote class="blockquote">
+                                <h4>Welcome to Meltion Hotel</h4>
+                                <h5>--- enjoy your holiday</h5>
+                            </blockquote>
+                        </div>
+                        <br />
+                        <div>
+                            <asp:Menu ID="Menu2" SkinID="Menu2" DataSourceID="SiteMapDataSource1" runat="server">
+                            </asp:Menu>
+                        </div>
+                        <br />
+                        <div>
+                            <img id="small-image" src="../img/dog.jpg" alt="side bar pic"/>
+                        </div>
+                        <br />
+                        <div>
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <asp:Calendar SkinID="calendar" ID="Calendar1" runat="server"
+                                        SelectedDate="<%# DateTime.Now %>"></asp:Calendar>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="article">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                            <NodeStyle CssClass="removeLine" />
+                            <PathSeparatorTemplate>
+                                   >
+                            </PathSeparatorTemplate>
+                        </asp:SiteMapPath>
+                        <br />
+                        <br />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <br class="newline" />
+                <hr class="newline" />
+                <footer class="footer">
+                    <p>Copyright &copy; 2013 Meltion Hotel Ltd. All rights reserved.</p>
+                    <p>Designed by Haoyu Li.</p>
+                </footer>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
