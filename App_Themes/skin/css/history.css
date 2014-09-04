@@ -1,0 +1,15 @@
+#history {
+    width:600px;
+    padding:0px 20px;
+    background:#bfbfbf;
+    border:1px solid #fff;
+}
+
+    #history legend {
+        padding-bottom:20px;
+    }
+
+    #history div {
+        padding:10px 10px;
+        background:#d8d7d7;
+    }
