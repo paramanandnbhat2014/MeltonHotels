@@ -1,0 +1,98 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<%-- Calendar --%>
+<asp:Calendar class="calendar-bg" runat="server" SkinID="calendar" FirstDayOfWeek="Sunday" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="230px">
+     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+     <NextPrevStyle VerticalAlign="Bottom" />
+     <OtherMonthDayStyle ForeColor="#808080" />
+     <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+     <SelectorStyle BackColor="#CCCCCC" />
+     <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+     <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" CssClass="calendar-today"/>
+     <WeekendDayStyle BackColor="#FFFFCC" CssClass="calendar-weekend" />
+</asp:Calendar>
+<%-- end of Calendar --%>
+
+<%-- Menu 1 --%>
+<asp:Menu SkinID="Menu1" runat="server" Orientation="Horizontal" Font-Bold="False" Font-Italic="False" Font-Overline="False"  Font-Strikeout="False" Font-Underline="False"
+BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1.1em" ForeColor="#666666" StaticSubMenuIndent="10px">
+     <LevelMenuItemStyles>
+          <asp:MenuItemStyle CssClass="menu-level1" />
+          <asp:MenuItemStyle CssClass="menu-level2" />
+     </LevelMenuItemStyles>
+     <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+     <DynamicMenuItemStyle HorizontalPadding="30px" VerticalPadding="10px" />
+     <DynamicMenuStyle BackColor="#E3EAEB" />
+     <DynamicSelectedStyle BackColor="#1C5E55" CssClass="menu-selectedItem" />
+     <StaticHoverStyle BackColor="#666666" ForeColor="White"  CssClass="hoverstyle"  />
+     <StaticMenuItemStyle HorizontalPadding="30px" VerticalPadding="10px" />
+     <StaticSelectedStyle BackColor="#1C5E55" />
+
+     <Items>
+         <asp:MenuItem Text="Home" ToolTip="Home"  navigateurl="../../Ass1/index.aspx"/>
+         <asp:MenuItem Text="Registration" ToolTip="Registration"  navigateurl="../../Ass1/Registration.aspx"/>
+         <asp:MenuItem Text="About Us" ToolTip="About Us"  navigateurl="../../Ass1/AboutUs.aspx">
+               <asp:MenuItem Text="Our History" ToolTip="Our History"  navigateurl="../../Ass1/History.aspx"/>
+               <asp:MenuItem Text="Frequently asked questions" ToolTip="FAQ"  navigateurl="../../Ass1/FAQ.aspx" />
+         </asp:MenuItem>
+         <asp:MenuItem Text="Site Map" ToolTip="Site Map"  navigateurl="../../Ass1/SiteMap.aspx"/>
+         <asp:MenuItem Text="Documentation" ToolTip="Documentation"  navigateurl="../../Ass1/Documentation.aspx"/>
+     </Items>
+</asp:Menu>
+<%-- end of Menu 1 --%>
+
+<%-- Menu 2 --%>
+ <asp:Menu SkinID="Menu2" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" StaticSubMenuIndent="10px">
+         <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+         <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+         <DynamicMenuStyle BackColor="#F7F6F3" />
+         <DynamicSelectedStyle BackColor="#7C6F57" ForeColor="White"/>
+         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+         <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+         <StaticSelectedStyle BackColor="#7C6F57" ForeColor="White" />
+</asp:Menu>
+<%-- end of Menu 2 --%>
+
+
+<%-- Textbox --%>
+<asp:TextBox class="input" SkinID="TextBox" runat="server" />
+<%-- end of Textbox --%>
+
+
+<%-- Green button --%>
+<asp:Button SkinID="Button-green" class="button-green" runat="server" />
+<%-- end of Green button --%>
+
+<%-- Red button --%>
+<asp:Button SkinID="Button-red" class="button-red" runat="server" />
+<%-- end of Red button --%>
+
+<%-- Blue button --%>
+<asp:Button SkinID="Button-blue" runat="server" class="button-blue" />
+<%-- end of Blue button --%>
+
+<%-- Tree View --%>
+<asp:TreeView class="treeView" SkinID="treeView" runat="server"  ImageSet="Arrows">
+     <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" CssClass="hoverNodeStyle" />
+     <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" CssClass="nodeStyle" />
+     <ParentNodeStyle Font-Bold="False" CssClass="parentNodeStyle" />
+     <SelectedNodeStyle ForeColor="#ffffff" HorizontalPadding="0px" VerticalPadding="0px" CssClass="selectedNodeStyle" />
+ </asp:TreeView>
+<%-- end of Tree View --%>
+
+
+
